@@ -8,7 +8,7 @@ def main():
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
     kk_img = pg.image.load("ex01/fig/3.png")
     kk_img = pg.transform.flip(kk_img,True,False)
-    kk_imgs = [kk_img, pg.transform.rotozoom(kk_img,5,1.0), pg.transform.rotozoom(kk_img,10,1.0),pg.transform.rotozoom(kk_img,5,1.0)]
+    kk_imgs = [kk_img, pg.transform.rotozoom(kk_img,1,1.0),pg.transform.rotozoom(kk_img,2,1.0),pg.transform.rotozoom(kk_img,3,1.0),pg.transform.rotozoom(kk_img,4,1.0),pg.transform.rotozoom(kk_img,5,1.0), pg.transform.rotozoom(kk_img,6,1.0), pg.transform.rotozoom(kk_img,7,1.0),pg.transform.rotozoom(kk_img,8,1.0),pg.transform.rotozoom(kk_img,9,1.0),pg.transform.rotozoom(kk_img,10,1.0),pg.transform.rotozoom(kk_img,9,1.0),pg.transform.rotozoom(kk_img,8,1.0),pg.transform.rotozoom(kk_img,7,1.0),pg.transform.rotozoom(kk_img,6,1.0),pg.transform.rotozoom(kk_img,5,1.0),pg.transform.rotozoom(kk_img,4,1.0),pg.transform.rotozoom(kk_img,3,1.0),pg.transform.rotozoom(kk_img,2,1.0),pg.transform.rotozoom(kk_img,1,1.0)]
 
     tmr = 0
 
@@ -20,10 +20,10 @@ def main():
         x = tmr%1600
         screen.blit(bg_img, [-x, 0])
         screen.blit(pg.transform.flip(bg_img,True,False), [1600-x, 0])
-        screen.blit(kk_imgs[tmr%4],[300,200])
+        screen.blit(kk_imgs[tmr%len(kk_imgs)],[300,200])
 
         pg.display.update()
-        clock.tick(10)
+        clock.tick(100)
 
 
 if __name__ == "__main__":
